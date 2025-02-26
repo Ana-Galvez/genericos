@@ -8,11 +8,12 @@ namespace genericos
         static void Main(string[] args)
         {
             Lista nombres = new Lista(4);
-            nombres.Agregar("Ana");
+            nombres.Agregar(100);
             nombres.Agregar("Juan");
-            nombres.Agregar("Ezi");
+            nombres.Agregar(125);
             nombres.Agregar("Marco");
-            Console.WriteLine(nombres.GetLista(2));
+            int nombre = (int)nombres.GetLista(2);
+            Console.WriteLine(nombre.GetType());
         }
     }
 
