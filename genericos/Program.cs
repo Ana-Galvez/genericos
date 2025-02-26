@@ -7,16 +7,21 @@ namespace genericos
     {
         static void Main(string[] args)
         {
-
+            Lista nombres = new Lista(4);
+            nombres.Agregar("Ana");
+            nombres.Agregar("Juan");
+            nombres.Agregar("Ezi");
+            nombres.Agregar("Marco");
+            Console.WriteLine(nombres.GetLista(2));
         }
     }
 
     //SIN GENERICS, USANDO HERENCIA
-    class Objetos
+    class Lista
     {
         private Object[] lista;
         private int cantidadElementos=0;
-        public Objetos(int cantidadElementos)
+        public Lista(int cantidadElementos)
         {
             lista = new Object[cantidadElementos];
         }
@@ -26,9 +31,9 @@ namespace genericos
             cantidadElementos++;
         }
 
-        public Object GetLista(int cantidadElementos)
+        public Object GetLista(int indiceElemento)
         {
-            return lista[cantidadElementos];
+            return lista[indiceElemento];
         }
 
     }
