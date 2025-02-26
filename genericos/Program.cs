@@ -32,7 +32,12 @@ namespace genericos
             Empleado salario = salarios.GetLista(2);
             Console.WriteLine(salario.GetSalario()+4);
 
-
+            Lista<String> nombresEmpleados = new Lista<String>(3);
+            nombresEmpleados.Agregar("Ana");
+            nombresEmpleados.Agregar("Jorge");
+            nombresEmpleados.Agregar("Santiago");
+            Console.WriteLine(nombresEmpleados.GetLista(2));
+                
 
         }
     }
