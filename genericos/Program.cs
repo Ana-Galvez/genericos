@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Permissions;
 
 
 namespace genericos
@@ -8,12 +9,22 @@ namespace genericos
         static void Main(string[] args)
         {
             Lista nombres = new Lista(4);
-            nombres.Agregar(100);
-            nombres.Agregar("Juan");
-            nombres.Agregar(125);
-            nombres.Agregar("Marco");
-            int nombre = (int)nombres.GetLista(2);
-            Console.WriteLine(nombre.GetType());
+            //nombres.Agregar(100);
+            //nombres.Agregar("Juan");
+            //nombres.Agregar(125);
+            //nombres.Agregar("Marco");
+            ////se debe castear
+            //int nombre = (int)nombres.GetLista(2);
+            //Console.WriteLine(nombre.GetType());
+            nombres.Agregar(new Empleado(20000));
+            nombres.Agregar(new Empleado(20000));
+            nombres.Agregar(new Empleado(20000));
+            nombres.Agregar(new Empleado(20000));
+
+            //no tira error de tipo de dato hasta que se ejecuta
+            String nombre = (String)nombres.GetLista(2);
+
+
         }
     }
 
@@ -38,4 +49,20 @@ namespace genericos
         }
 
     }
+
+    class Empleado
+    {
+        private double salario;
+        public Empleado(double salario)
+        {
+            this.salario = salario;
+        }
+
+        public double GetSalario()
+        {
+            return salario;
+        }
+    }
+
+
 }
